@@ -1,0 +1,13 @@
+#
+# Information for /C=AE/O=DigitalTrust L.L.C./CN=DigitalTrust IGTF CA
+#
+alias = DigitalTrustIGTFCA
+ca_url = http://cacerts.digitaltrust.ae/dtigtfca.crt
+crl_url = http://crl1.digitaltrust.ae/dtigtfca.crl;http://crl2.digitaltrust.ae/dtigtfca.crl
+email = ca-admins@digitaltrust.ae
+status = accredited:classic
+url = https://ca.digitaltrust.ae/Grid/
+requires = DigitalTrustPrivateRootCAG4
+version = 1.115
+sha1fp.0 = 5F:27:FB:D9:B4:EA:82:66:71:59:CE:52:A3:7B:64:D5:65:6B:9E:18
+subjectdn = "/C=AE/O=DigitalTrust L.L.C./CN=DigitalTrust IGTF CA"

@@ -1,0 +1,15 @@
+#
+# @(#)$Id: GEANTeSciencePersonalECCCA4.info,v 1.2 2020/08/04 16:43:36 pmacvsdg Exp $
+# Information for GEANT TCS service ECC G4 (GEANTeSciencePersonalECCCA4)
+#
+alias = GEANTeSciencePersonalECCCA4
+url = https://wiki.geant.org/display/TCSNT/
+ca_url = http://geant.crt.sectigo.com/GEANTeSciencePersonalECCCA4.crt
+crl_url = http://geant.crl.sectigo.com/GEANTeSciencePersonalECCCA4.crl
+policy_url = https://wiki.geant.org/display/TCSNT/TCS+Repository
+requires = USERTrustECCCertificationAuthority
+email = tcs-pma@lists.geant.org
+status = accredited:mics
+version = 1.115
+sha1fp.0 = 9A:93:3E:0E:07:65:97:52:DA:AD:19:B0:1C:72:CA:89:E4:D2:F9:DA
+subjectdn = "/C=NL/O=GEANT Vereniging/CN=GEANT eScience Personal ECC CA 4"

@@ -1,0 +1,15 @@
+#
+# @(#)$Id: GEANTeScienceSSLECCCA4.info,v 1.2 2020/08/04 16:43:36 pmacvsdg Exp $
+# Information for GEANT TCS service G4 (GEANTeScienceSSLECCCA4)
+#
+alias = GEANTeScienceSSLECCCA4
+url = https://wiki.geant.org/display/TCSNT/
+ca_url = http://geant.crt.sectigo.com/GEANTeScienceSSLECCCA4.crt
+crl_url = http://geant.crl.sectigo.com/GEANTeScienceSSLECCCA4.crl
+policy_url = https://www.terena.org/activities/tcs/repository/
+requires = USERTrustECCCertificationAuthority
+email = tcs-pma@lists.geant.org
+status = accredited:classic
+version = 1.115
+sha1fp.0 = 81:6A:8A:8C:3D:ED:B3:E8:5C:40:61:B5:A3:85:61:39:10:9D:FE:0A
+subjectdn = "/C=NL/O=GEANT Vereniging/CN=GEANT eScience SSL ECC CA 4"

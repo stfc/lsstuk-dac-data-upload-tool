@@ -1,0 +1,13 @@
+#
+# Information for /C=AE/O=Digital Trust L.L.C./CN=DigitalTrust Secure CA G3  [Run by the Issuer]
+#
+alias = DigitalTrustSecureCAG3-runbytheissuer
+ca_url = http://digitaltrust.crt.sectigo.com/DigitalTrustSecureCAG3.crt
+crl_url = http://digitaltrust.crl.sectigo.com/DigitalTrustSecureCAG3.crl
+email = ca-admins@digitaltrust.ae
+status = accredited:classic
+url = http://digitaltrustgrid.ae/Grid/
+requires = USERTrustECCCertificationAuthority
+version = 1.115
+sha1fp.0 = 0A:F6:1A:A1:40:08:09:D1:F6:12:B5:3C:E6:19:61:09:8B:78:77:67
+subjectdn = "/C=AE/O=Digital Trust L.L.C./CN=DigitalTrust Secure CA G3  [Run by the Issuer]"

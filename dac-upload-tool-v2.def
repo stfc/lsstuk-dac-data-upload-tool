@@ -1,0 +1,41 @@
+Bootstrap: docker
+From: centos:7
+
+%files
+	ca-first.pem /opt/rucio/etc/web/ca-first.pem
+	usercert.pem /opt/rucio/etc/usercert
+	userkey.pem /opt/rucio/etc/userkey
+    dteam-voms2.hellasgrid.gr /etc/vomses/dteam-voms2.hellasgrid.gr
+	rucio.cfg /opt/rucio/etc/rucio.cfg
+	grid-security/ /etc/grid-security/
+	lsst-voms.slac.stanford.edu /etc/vomses/lsst-voms.slac.stanford.edu
+	voms.slac.stanford.edu.lsc /etc/grid-security/vomsdir/lsst/voms.slac.stanford.edu.lsc
+	voms1.slac.stanford.edu.lsc /etc/grid-security/vomsdir/lsst/voms1.slac.stanford.edu.lsc
+
+%post
+	yum update -y && yum upgrade -y
+	yum-config-manager --add-repo=https://raw.githubusercontent.com/indigo-iam/egi-trust-anchors-container/main/EGI-trustanchors.repo
+	yum-config-manager --add-repo=http://dmc-repo.web.cern.ch/dmc-repo/dmc-el7.repo
+
+	yum install -y epel-release.noarch
+	yum clean all
+	rm -rf /var/cache/yum
+	yum upgrade -y
+	yum clean all
+	rm -rf /var/cache/yum
+	yum -y install https://repo.ius.io/ius-release-el7.rpm
+	yum install -y python36u-pip voms-clients-java gfal2-all gfal2-util gfal2-python3 xrootd-client nordugrid-arc-client nordugrid-arc-plugins-gfal ca-policy-egi-core nordugrid-arc-plugins-globus nordugrid-arc-plugins-s3 nordugrid-arc-plugins-xrootd voms-config-wlcg  voms-config-vo-dteam
+
+	python3.6 -m pip install --no-cache-dir --upgrade pip
+	python3.6 -m pip install  --no-cache-dir --upgrade setuptools
+	python3.6 -m pip install --no-cache-dir --pre rucio-clients==1.31.6
+	python3.6 -m pip install --no-cache-dir jinja2 j2cli pyyaml
+
+	yum update -y && yum upgrade -y
+	cp /opt/rucio/etc/usercert /opt/rucio/etc/usercert.pem	
+	cp /opt/rucio/etc/userkey /opt/rucio/etc/userkey.pem
+	chmod 600 /opt/rucio/etc/usercert.pem
+	chmod 400 /opt/rucio/etc/userkey.pem
+	mkdir -p /home/user/.globus
+	cp /opt/rucio/etc/usercert.pem /home/user/.globus
+	cp /opt/rucio/etc/userkey.pem /home/user/.globus
