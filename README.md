@@ -38,7 +38,7 @@ The command for this is `apptainer build dac-upload-tool-v2.sif dac-upload-tool-
 * the Rucio RSE to which you want to upload
 * the maximum number of containers to run in parallel (in theory - more will speed up your upload process)
 
-> [!INFO]
+> [!NOTE]
 > The upload command includes the attribute `--lifetime 3600`. On a properly running Rucio server, this will result in any file you upload being delated after 1 hour (3600 seconds). If you're using this tool in production (and, again, you really should attempt any alternative you can before you do) you will want to remove this!
 
 6. Authenticate with your chosen VO using vomses.
