@@ -2,8 +2,8 @@
 
 This is a Python tool that was created to facilitate the upload of large amounts of data from remote sites which are not part of GridPP (namely CSD3) to object storage on Echo, in SCD at RAL.
 
-[!WARNING]
-This is a largely untested tool and likely contains errors which could, possibly, cause irreparable damage to your data. You are *strongly* advised to not rely on this tool for data transfer if you have other options. In particular, _you should consider how you're going to long-term store your data *before* you create it on any particular HPC system._
+> [!WARNING]
+> This is a largely untested tool and likely contains errors which could, possibly, cause irreparable damage to your data. You are *strongly* advised to not rely on this tool for data transfer if you have other options. In particular, _you should consider how you're going to long-term store your data *before* you create it on any particular HPC system._
 
 ## How does it work?
 
@@ -29,8 +29,8 @@ Again - there are much better options for doing data upload than this tool; in p
 
 The command for this is `apptainer build dac-upload-tool-v2.sif dac-upload-tool-v2.def`
 
-[!WARNING]
-Currently, the definition file requires grid certificates to be imported manually (from the grid-security directory in this repo) and installs the EGI trust anchors repo from a random GitHub repo (because it was easy). Both these are probably massive security risks, but unfortunately because the EGI trust anchors repo moved / got broken right at the end of my graduate project working on LSST, this was the only option available in the timeframe. _I will try to, but make no guarantee that I will be able to, fix this in the future._
+> [!WARNING]
+> Currently, the definition file requires grid certificates to be imported manually (from the grid-security directory in this repo) and installs the EGI trust anchors repo from a random GitHub repo (because it was easy). Both these are probably massive security risks, but unfortunately because the EGI trust anchors repo moved / got broken right at the end of my graduate project working on LSST, this was the only option available in the timeframe. _I will try to, but make no guarantee that I will be able to, fix this in the future._
 
 5. Edit `main.py` to set:
 * the batch size (number of files to upload in a single 'thread')
@@ -38,8 +38,8 @@ Currently, the definition file requires grid certificates to be imported manuall
 * the Rucio RSE to which you want to upload
 * the maximum number of containers to run in parallel (in theory - more will speed up your upload process)
 
-[!INFO]
-The upload command includes the attribute `--lifetime 3600`. On a properly running Rucio server, this will result in any file you upload being delated after 1 hour (3600 seconds). If you're using this tool in production (and, again, you really should attempt any alternative you can before you do) you will want to remove this!
+> [!INFO]
+> The upload command includes the attribute `--lifetime 3600`. On a properly running Rucio server, this will result in any file you upload being delated after 1 hour (3600 seconds). If you're using this tool in production (and, again, you really should attempt any alternative you can before you do) you will want to remove this!
 
 6. Authenticate with your chosen VO using vomses.
 
